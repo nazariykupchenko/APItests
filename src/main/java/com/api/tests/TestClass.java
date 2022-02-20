@@ -2,7 +2,6 @@ package com.api.tests;
 
 import com.api.endpoints.SwapiResponse;
 import com.api.models.PeopleModel;
-import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 
 public class TestClass {
