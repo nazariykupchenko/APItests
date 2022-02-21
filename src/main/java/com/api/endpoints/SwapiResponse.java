@@ -2,7 +2,7 @@ package com.api.endpoints;
 
 import io.restassured.response.ValidatableResponse;
 
-public class SwapiResponse extends RequestResponseSpecification {
+public class SwapiResponse extends Api {
 
   public ValidatableResponse swapiResponse(int i) {
     return requestSpecification()
