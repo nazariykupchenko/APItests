@@ -37,7 +37,4 @@ public class PeopleModel {
   String edited;
   @JsonProperty("url")
   String url;
-
-
-
 }

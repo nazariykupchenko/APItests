@@ -9,5 +9,4 @@ public class SwapiResponse extends RequestResponseSpecification {
         .get("people/" + i)
         .then();
   }
-
 }
