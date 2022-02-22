@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class ListOfResourcesModel {
+public class DataModel {
 
   @JsonProperty("id")
   private int id;
@@ -15,5 +15,5 @@ public class ListOfResourcesModel {
   @JsonProperty("color")
   private String color;
   @JsonProperty("pantone_value")
-  private String pantone_value;
+  private String pantoneValue;
 }
