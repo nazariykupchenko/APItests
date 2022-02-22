@@ -6,9 +6,9 @@ import static com.api.utils.Properties.SWAPI_BASE_URI;
 import com.api.endpoints.Api;
 import io.restassured.response.ValidatableResponse;
 
-public class SwapiUserEndpoint extends Api {
+public class SwapiEndpoint extends Api {
 
-  public ValidatableResponse getUser(int i) {
+  public ValidatableResponse getMember(int i) {
     return requestSpecification(SWAPI_BASE_URI)
         .get(PEOPLE_END_POINT + i)
         .then()
