@@ -5,6 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class SingleUserModel {
+
   @JsonProperty("id")
   private int id;
   @JsonProperty("email")
@@ -15,9 +16,5 @@ public class SingleUserModel {
   private String last_name;
   @JsonProperty("avatar")
   private String avatar; //тут ссилка на img
-  @JsonProperty("url")
-  private String url;
-  @JsonProperty("text")
-  private String text;
 
 }

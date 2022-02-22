@@ -16,10 +16,5 @@ public class SingleResourceModel {
   private String color;
   @JsonProperty("pantone_value")
   private String pantone_value;
-  @JsonProperty("url")
-  private String url;
-  @JsonProperty("text")
-  private String text;
-
 
 }

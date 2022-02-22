@@ -8,9 +8,9 @@ import io.restassured.response.ValidatableResponse;
 
 public class ReqresUserEndpoint extends Api {
 
-  public ValidatableResponse getSingleUser(int i) {
+  public ValidatableResponse getSingleUser(int id) {
     return requestSpecification(REQRES_BASE_URI)
-        .get(REQRES_USERS_END_POINT + i)
+        .get(REQRES_USERS_END_POINT + id)
         .then()
         .statusCode(200);
   }
