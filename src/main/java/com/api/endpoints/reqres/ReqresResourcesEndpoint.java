@@ -1,7 +1,7 @@
 package com.api.endpoints.reqres;
 
 import static com.api.utils.Properties.REQRES_BASE_URI;
-
+import static com.api.utils.Properties.REQRES_RESOURCES_END_POINT;
 import com.api.endpoints.Api;
 import com.api.utils.Properties;
 import io.restassured.response.ValidatableResponse;
@@ -15,9 +15,9 @@ public class ReqresResourcesEndpoint extends Api {
         .statusCode(200);
   }
 
-  public ValidatableResponse getListResource() {
+  public ValidatableResponse getListOfResources() {
     return requestSpecification(REQRES_BASE_URI)
-        .get(Properties.REQRES_RESOURCES_END_POINT)
+        .get(REQRES_RESOURCES_END_POINT)
         .then()
         .statusCode(200);
   }
