@@ -16,5 +16,4 @@ public class ListOfUsersModel {
   private String last_name;
   @JsonProperty("avatar")
   private String avatar;
-
 }

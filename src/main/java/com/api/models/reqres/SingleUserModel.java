@@ -16,5 +16,4 @@ public class SingleUserModel {
   private String last_name;
   @JsonProperty("avatar")
   private String avatar; //тут ссилка на img
-
 }

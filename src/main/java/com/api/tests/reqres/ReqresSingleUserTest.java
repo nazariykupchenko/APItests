@@ -31,6 +31,4 @@ public class ReqresSingleUserTest {
     Assert.assertEquals(expectedLastName, actualLastName);
     log.info("test for user id {} , and last name {} finished", id, expectedLastName);
   }
-
-
 }

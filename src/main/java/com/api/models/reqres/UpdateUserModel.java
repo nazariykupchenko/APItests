@@ -12,5 +12,4 @@ public class UpdateUserModel {
   private String job;
   @JsonProperty("updateAt")
   private String updateAt;
-
 }

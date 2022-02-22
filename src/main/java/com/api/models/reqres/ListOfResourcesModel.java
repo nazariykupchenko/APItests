@@ -16,6 +16,4 @@ public class ListOfResourcesModel {
   private String color;
   @JsonProperty("pantone_value")
   private String pantone_value;
-
-
 }

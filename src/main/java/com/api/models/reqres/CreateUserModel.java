@@ -14,5 +14,4 @@ public class CreateUserModel {
   private String job;
   @JsonProperty("createAt")
   private String createAt;
-
 }
