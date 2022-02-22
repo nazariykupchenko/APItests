@@ -14,7 +14,5 @@ public abstract class Api {
         .header("connection", "keep-alive")
         .log()
         .ifValidationFails();
-//        .filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
   }
-
 }
