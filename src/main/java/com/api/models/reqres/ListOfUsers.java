@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class ListOfUsersModel {
+public class ListOfUsers {
 
   @JsonProperty("id")
   private int id;

@@ -4,12 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class UpdateUserModel {
-
+public class CreateUserRequest {
   @JsonProperty("name")
   private String name;
   @JsonProperty("job")
   private String job;
-  @JsonProperty("updateAt")
-  private String updateAt;
 }

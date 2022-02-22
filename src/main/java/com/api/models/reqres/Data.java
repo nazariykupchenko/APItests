@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class DataModel {
+public class Data {
 
   @JsonProperty("id")
   private int id;

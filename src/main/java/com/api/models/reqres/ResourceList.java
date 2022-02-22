@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class ResourceListModel {
+public class ResourceList {
 
   @JsonProperty("page")
   private int page;
@@ -15,7 +15,7 @@ public class ResourceListModel {
   @JsonProperty("total_pages")
   private int total_pages;
   @JsonProperty("data")
-  DataModel[] dataList;
+  Data[] dataList;
   @JsonProperty("support")
-  SupportModel support;
+  Support support;
 }
