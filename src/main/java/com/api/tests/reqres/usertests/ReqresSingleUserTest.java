@@ -1,4 +1,7 @@
-package com.api.tests.reqres;
+package com.api.tests.reqres.usertests;
+
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static io.restassured.module.jsv.JsonSchemaValidatorSettings.settings;
 
 import com.api.endpoints.reqres.ReqresUserEndpoint;
 import lombok.extern.slf4j.Slf4j;
@@ -30,5 +33,13 @@ public class ReqresSingleUserTest {
         .get("data.last_name");
     Assert.assertEquals(expectedLastName, actualLastName);
     log.info("test for user id {} , and last name {} finished", id, expectedLastName);
+  }
+
+  @Test
+  public void userSchemaTest() {
+    reqresUserEndpoint
+        .getSingleUser(1)
+        .assertThat().body(matchesJsonSchemaInClasspath("reqres/single-user-schema.json").using(
+            settings().with().checkedValidation(false)));
   }
 }
