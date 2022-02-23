@@ -1,5 +1,6 @@
-package com.api.tests.reqres.resourcestests;
+package com.api.tests.reqres;
 
+import static com.api.utils.Properties.SINGLE_RESOURCE_SCHEMA;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static io.restassured.module.jsv.JsonSchemaValidatorSettings.settings;
 
@@ -12,12 +13,13 @@ import org.testng.annotations.Test;
 @Slf4j
 public class ReqresResourceTest {
 
+  private static final int SINGLE_RESOURCE_SCHEMA_ID = 2;
   private final ReqresResourcesEndpoint reqresResourcesEndpoint = new ReqresResourcesEndpoint();
 
   @Test
-  public void resourceSchemaTest() {
-    reqresResourcesEndpoint.getSingleResource(2).assertThat().body(
-        matchesJsonSchemaInClasspath("reqres/single-resource-schema.json").using(
+  public void resourceSchemaValidation() {
+    reqresResourcesEndpoint.getSingleResource(SINGLE_RESOURCE_SCHEMA_ID).assertThat().body(
+        matchesJsonSchemaInClasspath(SINGLE_RESOURCE_SCHEMA).using(
             settings().with().checkedValidation(false)));
   }
 
@@ -28,8 +30,8 @@ public class ReqresResourceTest {
         .extract()
         .body()
         .as(ResourceList.class)
-        .getDataList().length;
+        .getResourceData().length;
     Assert.assertEquals(6, length);
-    log.info("length is {}" + length);
+    log.info("length is {}", length);
   }
 }

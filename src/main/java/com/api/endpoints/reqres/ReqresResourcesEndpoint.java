@@ -2,6 +2,7 @@ package com.api.endpoints.reqres;
 
 import static com.api.utils.Properties.REQRES_BASE_URI;
 import static com.api.utils.Properties.REQRES_RESOURCES_END_POINT;
+
 import com.api.endpoints.Api;
 import com.api.utils.Properties;
 import io.restassured.response.ValidatableResponse;

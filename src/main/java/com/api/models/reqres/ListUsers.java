@@ -4,18 +4,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class ResourceList {
+public class ListUsers {
 
   @JsonProperty("page")
-  private int page;
+  private String page;
   @JsonProperty("per_page")
-  private int per_page;
+  private String perPage;
   @JsonProperty("total")
-  private int total;
+  private String total;
   @JsonProperty("total_pages")
-  private int total_pages;
+  private String totalPages;
   @JsonProperty("data")
-  private ResourceData[] resourceData;
+  private UserData[] userData;
   @JsonProperty("support")
   private Support support;
 }

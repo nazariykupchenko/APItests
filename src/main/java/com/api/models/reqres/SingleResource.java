@@ -6,14 +6,8 @@ import lombok.Getter;
 @Getter
 public class SingleResource {
 
-  @JsonProperty("id")
-  private int id;
-  @JsonProperty("name")
-  private String name;
-  @JsonProperty("year")
-  private int year;
-  @JsonProperty("color")
-  private String color;
-  @JsonProperty("pantone_value")
-  private String pantone_value;
+  @JsonProperty("data")
+  private ResourceData resourceData;
+  @JsonProperty("support")
+  private Support support;
 }

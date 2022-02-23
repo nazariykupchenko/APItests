@@ -5,6 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class CreateUserRequest {
+
   @JsonProperty("name")
   private String name;
   @JsonProperty("job")
