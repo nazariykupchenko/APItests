@@ -6,6 +6,8 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 import static io.restassured.module.jsv.JsonSchemaValidatorSettings.settings;
 
 import com.api.endpoints.reqres.ReqresUserEndpoint;
+import com.api.models.reqres.CreateUserRequest;
+import com.api.models.reqres.UpdateUserRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -15,7 +17,8 @@ import org.testng.annotations.Test;
 @Slf4j
 public class ReqresUserTest {
 
-
+  private static final int SINGLE_USER_ID = 1;
+  private static final int LIST_USERS_ID = 2;
   private final ReqresUserEndpoint reqresUserEndpoint = new ReqresUserEndpoint();
 
   @DataProvider(name = "data-provider")
@@ -54,16 +57,22 @@ public class ReqresUserTest {
 
   @Test
   public void createUserTest() {
-
+    reqresUserEndpoint
+        .createSingleUser(new CreateUserRequest("a", "b"));
+    log.info("user created");
   }
 
   @Test
   public void updateUserTest() {
-
+    reqresUserEndpoint
+        .updateSingleUser(7, new UpdateUserRequest("q", "d"));
+    log.info("user updated");
   }
 
   @AfterClass
   public void deleteUserTest() {
-
+    reqresUserEndpoint
+        .deleteSingleUser(7);
+    log.info("user deleted");
   }
 }

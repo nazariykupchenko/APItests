@@ -11,7 +11,6 @@ public class Properties {
   public static final String SINGLE_USER_SCHEMA = "reqres/schema/single-user-schema.json";
   public static final String LIST_USERS_SCHEMA = "reqres/schema/list-users-schema.json";
   public static final String SINGLE_RESOURCE_SCHEMA = "reqres/schema/single-resource-schema.json";
-
   /**
    * SWAPI endpoints
    */

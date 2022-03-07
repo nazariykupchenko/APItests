@@ -10,18 +10,24 @@ public class SwapiTest {
 
   @Test
   public void getMemberTest() {
-    swapiEndpoint
-        .getMember(1);
+    swapiEndpoint.getMember(1);
   }
 
   @Test
   public void getMemberNameTest() {
-    String name = swapiEndpoint
+    String name = swapiEndpoint.getMember(1).extract().body().as(PeopleModel.class).getName();
+    System.out.println(name);
+  }
+
+  @Test
+  public void peopleTest() {
+    swapiEndpoint
         .getMember(1)
         .extract()
         .body()
-        .as(PeopleModel.class)
-        .getName();
-    System.out.println(name);
+        .jsonPath()
+        .getObject("name", PeopleModel.class);
+
+
   }
 }

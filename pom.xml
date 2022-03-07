@@ -1,56 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.example</groupId>
   <artifactId>APITestAutomationProject</artifactId>
-  <version>1.0-SNAPSHOT</version>
 
-  <dependencies>
-    <dependency>
-      <groupId>io.rest-assured</groupId>
-      <artifactId>rest-assured</artifactId>
-      <version>${rest-assured.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>${testng.version}</version>    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${lombock.version}</version>      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.rest-assured</groupId>
-      <artifactId>json-schema-validator</artifactId>
-      <version>4.5.1</version>
-    </dependency>
-  </dependencies>
-  <properties>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.13.1</jackson.version>
-    <rest-assured.version>4.5.0</rest-assured.version>
-    <testng.version>7.5</testng.version>
-    <lombock.version>1.18.22</lombock.version>
-    <slf4j.version>1.7.30</slf4j.version>
-  </properties>
   <build>
     <testSourceDirectory>${project.basedir}/src/main/java</testSourceDirectory>
   </build>
+  <dependencies>
+    <dependency>
+      <artifactId>rest-assured</artifactId>
+      <groupId>io.rest-assured</groupId>
+      <version>${rest-assured.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>testng</artifactId>
+      <groupId>org.testng</groupId>
+      <version>${testng.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>jackson-databind</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <scope>provided</scope>
+      <version>${lombock.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>slf4j-simple</artifactId>
+      <groupId>org.slf4j</groupId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>json-schema-validator</artifactId>
+      <groupId>io.rest-assured</groupId>
+      <version>4.5.1</version>
+    </dependency>
+    <dependency>
+      <artifactId>guava</artifactId>
+      <groupId>com.google.guava</groupId>
+      <version>29.0-jre</version>
+    </dependency>
+  </dependencies>
+  <groupId>org.example</groupId>
+
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <jackson.version>2.13.1</jackson.version>
+    <lombock.version>1.18.22</lombock.version>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <rest-assured.version>4.5.0</rest-assured.version>
+    <slf4j.version>1.7.30</slf4j.version>
+    <testng.version>7.5</testng.version>
+  </properties>
+  <version>1.0-SNAPSHOT</version>
 
 </project>
