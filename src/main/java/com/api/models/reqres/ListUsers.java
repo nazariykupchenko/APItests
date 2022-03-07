@@ -1,6 +1,7 @@
 package com.api.models.reqres;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 import lombok.Getter;
 
 @Getter
@@ -15,7 +16,7 @@ public class ListUsers {
   @JsonProperty("total_pages")
   private String totalPages;
   @JsonProperty("data")
-  private UserData[] userData;
+  private List<UserData> userData;
   @JsonProperty("support")
   private Support support;
 }

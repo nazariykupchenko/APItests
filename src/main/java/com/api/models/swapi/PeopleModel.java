@@ -1,17 +1,20 @@
 package com.api.models.swapi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 import lombok.Getter;
 
 @Getter
 public class PeopleModel {
 
   @JsonProperty("species")
-  private String[] species;
+  private List<String> species;
   @JsonProperty("vehicles")
-  private String[] vehicles;
+  private List<String> vehicles;
   @JsonProperty("starships")
-  private String[] starships;
+  private List<String> starships;
+  @JsonProperty("films")
+  private List<String> films;
   @JsonProperty("created")
   private String created;
   @JsonProperty("edited")
@@ -35,7 +38,5 @@ public class PeopleModel {
   @JsonProperty("gender")
   private String gender;
   @JsonProperty("homeworld")
-  private String homeworld;
-  @JsonProperty("films")
-  private String[] films;
+  private String homeWorld;
 }
