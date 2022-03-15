@@ -11,6 +11,7 @@ import com.api.models.reqres.UpdateUserRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -29,6 +30,13 @@ public class ReqresUserTest {
     };
   }
 
+  @BeforeClass
+  public void createUserTest() {
+    reqresUserEndpoint
+        .createSingleUser(new CreateUserRequest("a", "b"));
+    log.info("user created");
+  }
+
   @Test
   public void userSchemaValidation() {
     reqresUserEndpoint
@@ -43,7 +51,7 @@ public class ReqresUserTest {
     log.info("list users schema validation");
   }
 
-  @Test(dataProvider = "data-provider")
+  @Test(dataProvider = "data-provider", priority = 1)
   public void userLastNameTest(int id, String expectedLastName) {
     String actualLastName = reqresUserEndpoint
         .getSingleUser(id)
@@ -55,14 +63,7 @@ public class ReqresUserTest {
     log.info("test for user id {} , and last name {} finished", id, expectedLastName);
   }
 
-  @Test
-  public void createUserTest() {
-    reqresUserEndpoint
-        .createSingleUser(new CreateUserRequest("a", "b"));
-    log.info("user created");
-  }
-
-  @Test
+  @Test(priority = 1)
   public void updateUserTest() {
     reqresUserEndpoint
         .updateSingleUser(7, new UpdateUserRequest("q", "d"));
