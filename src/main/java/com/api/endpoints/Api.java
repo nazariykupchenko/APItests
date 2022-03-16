@@ -1,5 +1,6 @@
 package com.api.endpoints;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -13,6 +14,9 @@ public abstract class Api {
         .header("Content-Type", ContentType.JSON)
         .header("connection", "keep-alive")
         .log()
-        .ifValidationFails();
+        .ifValidationFails()
+        .filter(new AllureRestAssured()
+            .setRequestTemplate("http-request.ftl")
+            .setResponseTemplate("http-response.ftl"));
   }
 }

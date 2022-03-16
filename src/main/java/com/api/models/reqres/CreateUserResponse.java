@@ -4,16 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class ListOfResourcesModel {
+public class CreateUserResponse {
 
   @JsonProperty("id")
   private int id;
-  @JsonProperty("year")
-  private int year;
   @JsonProperty("name")
   private String name;
-  @JsonProperty("color")
-  private String color;
-  @JsonProperty("pantone_value")
-  private String pantone_value;
+  @JsonProperty("job")
+  private String job;
+  @JsonProperty("createAt")
+  private String createAt;
 }

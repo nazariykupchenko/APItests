@@ -1,10 +1,12 @@
 package com.api.models.reqres;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
+import lombok.EqualsAndHashCode;
 
-@Getter
-public class SingleResourceModel {
+@EqualsAndHashCode
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ResourceData {
 
   @JsonProperty("id")
   private int id;
@@ -15,5 +17,7 @@ public class SingleResourceModel {
   @JsonProperty("color")
   private String color;
   @JsonProperty("pantone_value")
-  private String pantone_value;
+  private String pantoneValue;
+  @JsonProperty("some_field") //jsonIgnoreProperties
+  private String someField;
 }
