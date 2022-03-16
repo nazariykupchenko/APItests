@@ -8,6 +8,7 @@ import static io.restassured.module.jsv.JsonSchemaValidatorSettings.settings;
 import com.api.endpoints.reqres.ReqresUserEndpoint;
 import com.api.models.reqres.CreateUserRequest;
 import com.api.models.reqres.UpdateUserRequest;
+import io.qameta.allure.Epic;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -16,6 +17,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @Slf4j
+@Epic("We need to create new user, check user schema, user updating and deleting")
 public class ReqresUserTest {
 
   private static final int SINGLE_USER_ID = 1;

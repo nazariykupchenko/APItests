@@ -13,6 +13,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.MapDifference;
 import com.google.common.collect.Maps;
+import io.qameta.allure.Epic;
 import java.io.IOException;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +21,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 @Slf4j
+@Epic("We check user schema, verify json")
 public class ReqresResourceTest {
 
   private static final int SINGLE_RESOURCE_SCHEMA_ID = 2;
