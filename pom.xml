@@ -93,6 +93,8 @@
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <aspectj.version>1.9.7</aspectj.version>
     <usedefaultListeners>true</usedefaultListeners>
+    <test.suite>all_tests</test.suite>
+    <suite.folder>suites</suite.folder>
   </properties>
   <build>
     <sourceDirectory>
@@ -114,9 +116,14 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>${suite.folder}/${test.suite}.xml</suiteXmlFile>
+          </suiteXmlFiles>
           <systemPropertyVariables>
             <usedefaultListeners>${usedefaultListeners}</usedefaultListeners>
             <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
+            <suite.folder>${suite.folder}</suite.folder>
+            <test.suite>${test.suite}</test.suite>
           </systemPropertyVariables>
           <testFailureIgnore>true
           </testFailureIgnore>

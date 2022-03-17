@@ -34,7 +34,7 @@ public class ReqresResourceTest {
   /**
    * Resource schema validation
    */
-  @Test
+  @Test(groups = "schema")
   @Description(useJavaDoc = true)
   public void resourceSchemaValidation() {
     reqresResourcesEndpoint.getSingleResource(SINGLE_RESOURCE_SCHEMA_ID).assertThat().body(

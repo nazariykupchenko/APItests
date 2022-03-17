@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Reqres test suit">
+  <test name="Initial test" >
+    <groups>
+      <run>
+        <include name="schema" />
+      </run>
+    </groups>
+    <classes>
+      <class name="com.api.tests.reqres.ReqresUserTest"/>
+      <class name="com.api.tests.reqres.ReqresResourceTest"/>
+    </classes>
+  </test>
+</suite>

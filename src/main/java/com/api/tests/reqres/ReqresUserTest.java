@@ -8,7 +8,9 @@ import static io.restassured.module.jsv.JsonSchemaValidatorSettings.settings;
 import com.api.endpoints.reqres.ReqresUserEndpoint;
 import com.api.models.reqres.CreateUserRequest;
 import com.api.models.reqres.UpdateUserRequest;
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Epic;
+import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -33,13 +35,14 @@ public class ReqresUserTest {
   }
 
   @BeforeClass
+  @Step
   public void createUserTest() {
     reqresUserEndpoint
         .createSingleUser(new CreateUserRequest("a", "b"));
     log.info("user created");
   }
 
-  @Test
+  @Test(groups = "schema")
   public void userSchemaValidation() {
     reqresUserEndpoint
         .getSingleUser(1)
