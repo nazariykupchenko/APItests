@@ -3,7 +3,57 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>APITestAutomationProject</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+          </argLine>
+          <systemPropertyVariables>
+            <allure.results.directory>${project.basedir}/target/allure-results
+            </allure.results.directory>
+            <usedefaultListeners>${usedefaultListeners}</usedefaultListeners>
+          </systemPropertyVariables>
+          <testFailureIgnore>true
+          </testFailureIgnore>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven-surefire-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven-compiler-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <artifactId>allure-maven</artifactId>
+        <configuration>
+          <reportVersion>${allure-report.version}</reportVersion>
+        </configuration>
+        <groupId>io.qameta.allure</groupId>
+        <version>${allure-maven.version}</version>
+      </plugin>
+    </plugins>
+    <resources>
+      <resource>
+        <directory>
+          src/main/resources
+        </directory>
+      </resource>
+    </resources>
+    <sourceDirectory>
+      ${project.basedir}/src/main/java
+    </sourceDirectory>
+    <testSourceDirectory>
+      ${project.basedir}/src/main/java
+    </testSourceDirectory>
+  </build>
 
   <dependencies>
     <dependency>
@@ -43,33 +93,33 @@
       <version>29.0-jre</version>
     </dependency>
     <dependency>
-      <groupId>io.qameta.allure</groupId>
       <artifactId>allure-java-commons</artifactId>
+      <groupId>io.qameta.allure</groupId>
       <version>${allure.version}</version>
     </dependency>
     <dependency>
-      <groupId>io.qameta.allure</groupId>
       <artifactId>allure-descriptions-javadoc</artifactId>
+      <groupId>io.qameta.allure</groupId>
       <version>${allure.version}</version>
     </dependency>
     <dependency>
-      <groupId>io.qameta.allure</groupId>
       <artifactId>allure-attachments</artifactId>
-      <version>${allure.version}</version>
-    </dependency>
-    <dependency>
       <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-rest-assured</artifactId>
       <version>${allure.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.aspectj</groupId>
+      <artifactId>allure-rest-assured</artifactId>
+      <groupId>io.qameta.allure</groupId>
+      <version>${allure.version}</version>
+    </dependency>
+    <dependency>
       <artifactId>aspectjweaver</artifactId>
+      <groupId>org.aspectj</groupId>
       <version>${aspectj.version}</version>
     </dependency>
     <dependency>
-      <groupId>io.qameta.allure</groupId>
       <artifactId>allure-testng</artifactId>
+      <groupId>io.qameta.allure</groupId>
       <version>2.17.2</version>
     </dependency>
   </dependencies>
@@ -77,71 +127,22 @@
 
   <modelVersion>4.0.0</modelVersion>
   <properties>
+    <allure-maven.version>2.10.0</allure-maven.version>
+    <allure-report.version>2.10.0</allure-report.version>
+    <allure.version>2.16.1</allure.version>
+    <aspectj.version>1.9.7</aspectj.version>
     <jackson.version>2.13.1</jackson.version>
     <lombock.version>1.18.22</lombock.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <rest-assured.version>4.5.0</rest-assured.version>
     <slf4j.version>1.7.30</slf4j.version>
     <testng.version>7.5</testng.version>
-    <allure.version>2.16.1</allure.version>
-    <allure-maven.version>2.10.0</allure-maven.version>
-    <allure-report.version>2.10.0</allure-report.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-    <aspectj.version>1.9.7</aspectj.version>
     <usedefaultListeners>true</usedefaultListeners>
   </properties>
-  <build>
-    <sourceDirectory>
-      ${project.basedir}/src/main/java
-    </sourceDirectory>
-    <testSourceDirectory>
-      ${project.basedir}/src/main/java
-    </testSourceDirectory>
-    <resources>
-      <resource>
-        <directory>
-          src/main/resources
-        </directory>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${maven-surefire-plugin.version}</version>
-        <configuration>
-          <systemPropertyVariables>
-            <usedefaultListeners>${usedefaultListeners}</usedefaultListeners>
-            <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
-          </systemPropertyVariables>
-          <testFailureIgnore>true
-          </testFailureIgnore>
-          <argLine>
-            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-          </argLine>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>io.qameta.allure</groupId>
-        <artifactId>allure-maven</artifactId>
-        <version>${allure-maven.version}</version>
-        <configuration>
-          <reportVersion>${allure-report.version}</reportVersion>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+  <version>1.0-SNAPSHOT</version>
 </project>

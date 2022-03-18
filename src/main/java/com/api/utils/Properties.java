@@ -16,5 +16,11 @@ public class Properties {
    */
   public static final String SWAPI_BASE_URI = "https://swapi.dev/api";
   public static final String PEOPLE_END_POINT = "people/";
-
+  /**
+   * APPSLOVEWORLD endpoints
+   */
+  public static final String APPSLOVEWORLD_BASE_URI = "http://restapi.adequateshop.com";
+  public static final String APPSLOVEWORLD_REGISTRATION = "/api/authaccount/registration";
+  public static final String APPSLOVEWORLD_LOGIN = "/api/authaccount/login";
+  public static final String APPSLOVEWORLD_USERS_END_POINT = "/api/users";
 }

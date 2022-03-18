@@ -1,0 +1,12 @@
+{
+  "$id": "1",
+  "code": 0,
+  "message": "success",
+  "data": {
+    "$id": "2",
+    "Id": 7075,
+    "Name": "Developer",
+    "Email": "Developer5@gmail.com",
+    "Token": "3030401c-c5a5-43c8-8b73-2ab9e6f2ca22"
+  }
+}
