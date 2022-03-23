@@ -30,7 +30,10 @@ public class ReqresUserTest {
   public Object[][] userDataProvider() {
     return new Object[][]{
         new Object[]{2, "Weaver"},
-        new Object[]{7, "Lawson"}
+        new Object[]{7, "Lawson"},
+        new Object[]{8, "Ferguson"},
+        new Object[]{9, "Funke"},
+        new Object[]{11, "Edwards"}
     };
   }
 
